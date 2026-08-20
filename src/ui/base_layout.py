@@ -62,6 +62,7 @@ def style_base_layout():
                 font-size: 3.5rem !important;
                 line-height:1.1 1important;
                 margin-bottom:0rem !important;
+                color: black !important;
             }
                 
 

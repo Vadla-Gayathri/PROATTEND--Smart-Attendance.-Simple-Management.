@@ -11,5 +11,5 @@ def teacher_screen():
     with c1:
         header_dashboard()
     with c2:
-        st.button("Go back to Home", key = 'loginbackbtn', shortcut="control+backspace")
+        st.button("Go back to Home", type= 'secondary', key = 'loginbackbtn', shortcut="control+backspace")
     st.header('teacher_screen')
