@@ -20,7 +20,8 @@ def header_dashboard():
     st.markdown(f"""
         <div style="display:flex; align-items:center; justify-content:center; gap:10px">
             <img src='{logo_url}' style='height:85px;' />
-            <h2 style='text-align:left >SNAP<br/>CLASS</h2>
-        </div>   
-                
+            <div style='text-align:left; color:pink !important; font-family:"Climate Crisis", sans-serif; font-size:2rem;'>
+                SNAP<br/>CLASS
+            </div>
+        </div>
     """, unsafe_allow_html=True)
