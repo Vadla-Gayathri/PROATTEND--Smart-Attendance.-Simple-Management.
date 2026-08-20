@@ -7,4 +7,9 @@ def teacher_screen():
     style_base_layout()
 
     header_dashboard()
+    c1, c2 = st.columns(2, vertical_alignment='center', gap= 'xxlarge')
+    with c1:
+        header_dashboard()
+    with c2:
+        st.button("Go back to Home", key = 'loginbackbtn', shortcut="control+backspace")
     st.header('teacher_screen')
