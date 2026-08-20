@@ -11,4 +11,4 @@ def teacher_screen():
         header_dashboard()
     with c2:
         st.button("Go back to Home", type= 'secondary', key = 'loginbackbtn', shortcut="control+backspace")
-    st.header('teacher_screen')
+    st.header('Register your teacher Profile')
