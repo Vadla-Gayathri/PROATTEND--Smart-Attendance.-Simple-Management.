@@ -1,3 +1,5 @@
+streamlit
+
 pandas
 numpy
 
@@ -12,6 +14,7 @@ supabase
 bcrypt
 
 segno          # QR code generation
-Pillow         # Helps in image preprocessing
+Pillow         # Helps in image preprocessing    # Frontend library
 
-streamlit      # Frontend library
+librosa
+resemblyzer

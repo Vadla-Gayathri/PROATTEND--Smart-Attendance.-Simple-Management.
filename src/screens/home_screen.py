@@ -8,18 +8,20 @@ def home_screen():
     style_background_home()
     style_base_layout()
 
+    
+
     col1, col2 = st.columns(2, gap="large")
 
     with col1:
-            st.header("I'm Student")
-            st.image("https://i.ibb.co/844D9Lrt/mascot-student.png", width=120)
-            if st.button('Student Portal', type='primary', icon= ':material/arrow_outward:', icon_position='right'):
+            st.header("I'm Student")      
+            st.image("https://i.ibb.co/gb78bmGv/student-png.png", width=200)
+            if st.button('Student Portal', type='primary', icon= ':material/arrow_outward:', icon_position='right', width='stretch'):
                 st.session_state['login_type'] = 'student'
                 st.rerun()
     with col2:
        st.header("I'm Teacher")
-       st.image("https://i.ibb.co/844D9Lrt/mascot-teacher.png", width=120)
-       if st.button('Teacher Portal', type='primary', icon= ':material/arrow_outward:', icon_position='right'):
+       st.image("https://i.ibb.co/21gkW1kh/Chat-GPT-Image-Aug-25-2026-09-18-36-PM.png", width=290)
+       if st.button('Teacher Portal', type='primary', icon= ':material/arrow_outward:', icon_position='right', width='stretch'):
            st.session_state['login_type'] = 'teacher'
            st.rerun()
     footer_home()
