@@ -9,19 +9,9 @@ def style_background_home():
 
     st.markdown("""
         <style>
-
-            /* ==================================================
-               MAIN HOME BACKGROUND
-               ================================================== */
-
             .stApp {
                 background: #D9D4FF !important;
             }
-
-
-            /* ==================================================
-               STUDENT + TEACHER CARDS
-               ================================================== */
 
             .stApp div[data-testid="stColumn"] {
                 padding: 2.5rem !important;
@@ -31,19 +21,9 @@ def style_background_home():
                 position: relative !important;
             }
 
-
-            /* ==================================================
-               STUDENT CARD
-               ================================================== */
-
             .stApp div[data-testid="stColumn"]:first-child {
                 background: #E9FAF8 !important;
             }
-
-
-            /* ==================================================
-               TEACHER CARD
-               ================================================== */
 
             .stApp div[data-testid="stColumn"]:last-child {
                 background: #FFF3E7 !important;
@@ -51,11 +31,6 @@ def style_background_home():
 
         </style>
     """, unsafe_allow_html=True)
-
-
-# ============================================================
-# DASHBOARD BACKGROUND
-# ============================================================
 
 def style_background_dashboard():
 
@@ -70,28 +45,15 @@ def style_background_dashboard():
         </style>
     """, unsafe_allow_html=True)
 
-
-# ============================================================
-# COMMON APPLICATION STYLE
-# ============================================================
-
 def style_base_layout():
 
     st.markdown("""
         <style>
 
-        /* ==================================================
-           GOOGLE FONTS
-           ================================================== */
-
         @import url('https://fonts.googleapis.com/css2?family=Climate+Crisis:YEAR@1979&display=swap');
 
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-
-        /* ==================================================
-           HIDE STREAMLIT DEFAULT UI
-           ================================================== */
 
         #MainMenu,
         footer,
@@ -100,18 +62,10 @@ def style_base_layout():
         }
 
 
-        /* ==================================================
-           MAIN CONTENT SPACING
-           ================================================== */
-
         .block-container {
             padding-top: 1.5rem !important;
         }
 
-
-        /* ==================================================
-           MAIN HEADINGS
-           ================================================== */
 
         h1 {
             font-family: 'Climate Crisis', sans-serif !important;
@@ -131,10 +85,6 @@ def style_base_layout():
         }
 
 
-        /* ==================================================
-           OTHER TEXT
-           ================================================== */
-
         h3,
         h4,
         p,
@@ -142,9 +92,6 @@ def style_base_layout():
             font-family: 'Outfit', sans-serif !important;
             color: #172554 !important;
         }
-/* ==================================================
-   STUDENT / TEACHER CARD HEADING COLORS
-   ================================================== */
 
 .stApp div[data-testid="stColumn"]:first-child h1,
 .stApp div[data-testid="stColumn"]:first-child h2,
