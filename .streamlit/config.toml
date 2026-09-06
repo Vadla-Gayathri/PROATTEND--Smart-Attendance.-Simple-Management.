@@ -1,2 +1,11 @@
 [server]
 runOnSave = true
+fileWatcherType = "none"
+
+[theme]
+base = "light"
+primaryColor = "#7667E8"
+backgroundColor = "#D9D4FF"
+secondaryBackgroundColor = "#F8FAF8"
+textColor = "#172554"
+font = "sans serif"
