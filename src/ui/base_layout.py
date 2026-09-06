@@ -204,13 +204,6 @@ def style_base_layout():
         input,
         textarea {
             border-radius: 12px !important;
-        background-color: #FFFFFF !important;
-        color: #172554 !important;
-        }
-
-        input::placeholder,
-        textarea::placeholder {
-            color: #64748B !important;
         }
 
 
