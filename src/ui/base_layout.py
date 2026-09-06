@@ -56,10 +56,10 @@ def style_base_layout():
 
 
         #MainMenu,
-        footer,
-        header {
-            visibility: hidden;
-        }
+        # footer,
+        # header {
+        #     visibility: hidden;
+        # }
 
 
         .block-container {
