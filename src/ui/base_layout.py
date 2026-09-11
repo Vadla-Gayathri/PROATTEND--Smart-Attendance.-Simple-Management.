@@ -1,10 +1,5 @@
 import streamlit as st
 
-
-# ============================================================
-# HOME PAGE BACKGROUND
-# ============================================================
-
 def style_background_home():
 
     st.markdown("""
@@ -104,9 +99,6 @@ def style_base_layout():
 .stApp div[data-testid="stColumn"]:last-child h3 {
     color: #F28C00 !important;
 }
-/* ==================================================
-   HOME PAGE DECORATIVE ACCENTS
-   ================================================== */
 
 .stApp div[data-testid="stColumn"]:first-child::before {
     content: "✦";
@@ -126,10 +118,6 @@ def style_base_layout():
     margin-top: 5px;
 }
 
-        /* ==================================================
-           PRIMARY BUTTON
-           Teal
-           ================================================== */
 
         button[kind="primary"] {
             border-radius: 1.5rem !important;
@@ -146,11 +134,6 @@ def style_base_layout():
         }
 
 
-        /* ==================================================
-           SECONDARY BUTTON
-           Orange
-           ================================================== */
-
         button[kind="secondary"] {
             border-radius: 1.5rem !important;
             background-color: #FF9800 !important;
@@ -165,11 +148,6 @@ def style_base_layout():
             color: white !important;
         }
 
-
-        /* ==================================================
-           TERTIARY BUTTON
-           Navy
-           ================================================== */
 
         button[kind="tertiary"] {
             border-radius: 1.5rem !important;
@@ -186,10 +164,6 @@ def style_base_layout():
         }
 
 
-        /* ==================================================
-           BUTTON HOVER EFFECT
-           ================================================== */
-
         button[kind="primary"]:hover,
         button[kind="secondary"]:hover,
         button[kind="tertiary"]:hover {
@@ -197,28 +171,16 @@ def style_base_layout():
         }
 
 
-        /* ==================================================
-           INPUT BOXES
-           ================================================== */
-
         input,
         textarea {
             border-radius: 12px !important;
         }
 
 
-        /* ==================================================
-           SELECT BOX
-           IMPORTANT:
-           Do NOT style the internal selectbox button.
-           ================================================== */
-
         div[data-baseweb="select"] > div {
             border-radius: 12px !important;
         }
 
-
-        /* Selectbox text */
 
         div[data-baseweb="select"] {
             font-family: 'Outfit', sans-serif !important;
@@ -230,35 +192,18 @@ def style_base_layout():
         }
 
 
-        /* ==================================================
-           DIVIDERS
-           ================================================== */
-
         hr {
             border-color: #C9C3F5 !important;
         }
-
-
-        /* ==================================================
-           LINKS
-           ================================================== */
 
         a {
             color: #7667E8 !important;
         }
 
 
-        /* ==================================================
-           SUCCESS / INFO TEXT
-           ================================================== */
-
         [data-testid="stAlert"] {
             border-radius: 15px !important;
         }
-
-        /* ==================================================
-   CAMERA INPUT - TAKE PHOTO BUTTON
-   ================================================== */
 
 div[data-testid="stCameraInput"] button {
     background-color: #10A6A6 !important;

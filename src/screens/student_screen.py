@@ -32,10 +32,6 @@ def student_dashboard():
     student_data = st.session_state.student_data
     student_id = student_data['student_id']
 
-    # ==============================
-    # HEADER
-    # ==============================
-
     c1, c2 = st.columns(
         2,
         vertical_alignment='center',
@@ -63,10 +59,6 @@ def student_dashboard():
 
     st.space()
 
-    # ==============================
-    # SUBJECT HEADER
-    # ==============================
-
     c1, c2 = st.columns(2)
 
     with c1:
@@ -82,19 +74,11 @@ def student_dashboard():
 
     st.divider()
 
-    # ==============================
-    # LOAD SUBJECTS AND ATTENDANCE
-    # ==============================
-
     with st.spinner('Loading your enrolled subjects..'):
 
         subjects = get_student_subjects(student_id)
 
         logs = get_student_attendance(student_id)
-
-    # ==============================
-    # ATTENDANCE STATISTICS
-    # ==============================
 
     stats_map = {}
 
@@ -113,10 +97,6 @@ def student_dashboard():
         if log.get('is_present'):
             stats_map[sid]['attended'] += 1
 
-    # ==============================
-    # SUBJECT CARDS
-    # ==============================
-
     cols = st.columns(2)
 
     for i, sub_node in enumerate(subjects):
@@ -133,9 +113,6 @@ def student_dashboard():
             }
         )
 
-        # --------------------------------
-        # UNENROLL BUTTON CALLBACK
-        # --------------------------------
 
         def unenroll_button(
             student_id=student_id,
@@ -162,10 +139,6 @@ def student_dashboard():
 
                 st.rerun()
 
-        # --------------------------------
-        # SUBJECT CARD
-        # --------------------------------
-
         with cols[i % 2]:
 
             subject_card(
@@ -179,35 +152,19 @@ def student_dashboard():
                 footer_callback=unenroll_button
             )
 
-    # ==============================
-    # FOOTER
-    # ==============================
-
     footer_dashboard()
 
 
 def student_screen():
 
-    # ==============================
-    # PAGE STYLING
-    # ==============================
-
     style_background_dashboard()
     style_base_layout()
-
-    # ==============================
-    # CHECK IF STUDENT ALREADY LOGGED IN
-    # ==============================
 
     if "student_data" in st.session_state:
 
         student_dashboard()
 
         return
-
-    # ==============================
-    # HEADER
-    # ==============================
 
     c1, c2 = st.columns(
         2,
@@ -231,9 +188,6 @@ def student_screen():
 
             st.rerun()
 
-    # ==============================
-    # FACE LOGIN
-    # ==============================
 
     st.header(
         'Login using FaceID',
@@ -249,10 +203,6 @@ def student_screen():
         "Position your face in the center"
     )
 
-    # ==============================
-    # FACE DETECTION
-    # ==============================
-
     if photo_source:
 
         img = np.array(
@@ -263,29 +213,17 @@ def student_screen():
 
             detected, all_ids, num_faces = predict_attendance(img)
 
-        # --------------------------------
-        # NO FACE
-        # --------------------------------
-
         if num_faces == 0:
 
             st.warning(
                 'Face not found!'
             )
 
-        # --------------------------------
-        # MULTIPLE FACES
-        # --------------------------------
-
         elif num_faces > 1:
 
             st.warning(
                 'Multiple faces found'
             )
-
-        # --------------------------------
-        # SINGLE FACE
-        # --------------------------------
 
         else:
 
@@ -306,10 +244,6 @@ def student_screen():
                     None
                 )
 
-                # ==============================
-                # STUDENT FOUND
-                # ==============================
-
                 if student:
 
                     st.session_state.is_logged_in = True
@@ -326,10 +260,6 @@ def student_screen():
 
                     st.rerun()
 
-            # ==============================
-            # STUDENT NOT FOUND
-            # ==============================
-
             else:
 
                 st.info(
@@ -339,10 +269,6 @@ def student_screen():
 
                 show_registration = True
 
-    # ==============================
-    # NEW STUDENT REGISTRATION
-    # ==============================
-
     if show_registration:
 
         with st.container(border=True):
@@ -351,19 +277,11 @@ def student_screen():
                 'Register new Profile'
             )
 
-            # --------------------------------
-            # NAME
-            # --------------------------------
 
             new_name = st.text_input(
                 "Enter your name",
                 placeholder='E.g. Hamza Rizvi'
             )
-
-            # --------------------------------
-            # VOICE ENROLLMENT
-            # --------------------------------
-
             st.subheader(
                 'Optional : Voice Enrollment'
             )
@@ -388,29 +306,19 @@ def student_screen():
                     'Audio Data failed!'
                 )
 
-            # --------------------------------
-            # CREATE ACCOUNT
-            # --------------------------------
+
 
             if st.button(
                 'Create Account',
                 type='primary'
             ):
 
-                # ==============================
-                # NAME VALIDATION
-                # ==============================
 
                 if new_name:
 
                     with st.spinner(
                         'Creating profile..'
                     ):
-
-                        # --------------------------------
-                        # FACE EMBEDDING
-                        # --------------------------------
-
                         img = np.array(
                             Image.open(photo_source)
                         )
@@ -423,9 +331,6 @@ def student_screen():
 
                             face_emb = encodings[0].tolist()
 
-                            # --------------------------------
-                            # VOICE EMBEDDING
-                            # --------------------------------
 
                             voice_emb = None
 
@@ -435,19 +340,12 @@ def student_screen():
                                     audio_data.read()
                                 )
 
-                            # --------------------------------
-                            # CREATE STUDENT
-                            # --------------------------------
-
                             response_data = create_student(
                                 new_name,
                                 face_embedding=face_emb,
                                 voice_embedding=voice_emb
                             )
 
-                            # --------------------------------
-                            # ACCOUNT CREATED
-                            # --------------------------------
 
                             if response_data:
 
@@ -474,9 +372,6 @@ def student_screen():
                                 "facial features for registration"
                             )
 
-                # ==============================
-                # EMPTY NAME
-                # ==============================
 
                 else:
 
@@ -484,8 +379,5 @@ def student_screen():
                         'Please enter your name!'
                     )
 
-    # ==============================
-    # FOOTER
-    # ==============================
 
     footer_dashboard()
